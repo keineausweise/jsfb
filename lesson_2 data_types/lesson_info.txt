@@ -25,6 +25,20 @@ false // false
 var cars;              // Value is undefined
 var person = null;     // Value is null
 
+----------------------------------------------
+Data types (reference/value types)(mutable/immutable)
+----------------------------------------------
+value types:
+boolean
+number
+string
+function
+
+reference types:
+object
+array
+null/undefined
+
 
 ----------------------------------------------
 Typeof operator
@@ -41,3 +55,10 @@ Declarations
 var x = new String();          // Declares x as a String object
 var y = new Number();          // Declares y as a Number object
 var z = new Boolean();         //  Declares z as a Boolean object
+
+
+
+**********************************************
+Additional links:
+http://www.w3schools.com/js/js_datatypes.asp
+http://smallcultfollowing.com/babysteps/blog/2014/04/01/value-types-in-javascript/
