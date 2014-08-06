@@ -25,6 +25,9 @@ false // false
 var cars;              // Value is undefined
 var person = null;     // Value is null
 
+7*. function
+Function is also an object but is separated as a different type
+
 ----------------------------------------------
 Data types (reference/value types)(mutable/immutable)
 ----------------------------------------------
@@ -38,7 +41,6 @@ reference types:
 object
 array
 null/undefined
-
 
 ----------------------------------------------
 Typeof operator
@@ -56,7 +58,57 @@ var x = new String();          // Declares x as a String object
 var y = new Number();          // Declares y as a Number object
 var z = new Boolean();         //  Declares z as a Boolean object
 
+----------------------------------------------
+Operators
+----------------------------------------------
+(+) plus
+5 + 5         = 10
+"s" + "c"     = "sc"
+{a:1} + {a:2} = NaN
 
+(-) minus
+5 - 5         = 0
+"s" - "c"     = NaN
+{a:1} - {a:2} = NaN
+
+(*) multiply
+5 * 5         = 25
+"s" * "c"     = NaN
+{a:1} * {a:2} = NaN
+
+(/) devide
+...
+(%) devision tail
+4 / 3 = 1.3333333333333333
+4 % 3 = 1
+4 % 4 = 0
+...
+
+(^) power
+2^2 = 4
+2^3 = 8
+...
+
+(==) equality
+Takes two variables converts them to one type 
+and returns true if they are equal.
+
+(===) raw equality
+Takes two variables DOES NOT convert them to
+one type and returns true if they are equal.
+
+(>) (<) (<=) (>=) (!=) (!==)
+
+----------------------------------------------
+Math
+----------------------------------------------
+Math is user for mathematical calculations
+
+Math.random(); // number from 0 to 1
+
+Math.sqrt(4);  // 2 - square root of number
+
+...
 
 **********************************************
 Additional links:
