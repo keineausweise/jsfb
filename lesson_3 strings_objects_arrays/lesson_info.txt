@@ -24,6 +24,54 @@ var obj_ref = obj;
 obj == obj_ref //true
 obj === obj_ref //true
 
+- Accessing properties
+obj.thisIsObject       // true
+obj["thisIsObject"]    // true
+
+- Setting properties
+obj.thisIsObject     = false    //false
+obj["thisIsObject"]  = false    //false
+
+-----------------------------------------------
+Arrays
+-----------------------------------------------
+- Creating array
+var array = new Array();
+var array = [];
+var array = new Array(1, 2, 3, 4);
+var array = [1, 2, 3, 4];
+
+- Diferentiating arrays
+array instanceof Array // true
+
+- Accessing elements
+array[0] = 1;
+array[1] = 2;
+
+array     //[1, 2]
+
+console.log(array[0]); // 1
+
+- Array properties / functions
+array = [1, 2, 3]
+array.length // 3 number of elements in the array
+
+array.forEach(function(element, index){
+    console.log(element, index);
+});
+//output:
+//1 0 
+//2 1 
+//3 2 
+
+array.map(function(element, index){return a1*2;}) // [2, 4, 6]
+
+array.push(element)
+array.push(4) // [1, 2, 3, 4]
+
+array.splice(start index, length)
+array.splice(0, 1) // [2, 3, 4] removes elements from array
+
 -----------------------------------------------
 Strings
 -----------------------------------------------
@@ -34,6 +82,15 @@ typeof str == typeof str2 // true
 
 typeof str // 'string'
 
+- string can be treated as a character array
+var str = "this is string";
+str[0] //t
+str.length // 14
+
+- but it is not array
+str instanceof Array // false
+str[0] == "!"
+str // "this is string"
 
 -----------------------------------------------
 Comparators
