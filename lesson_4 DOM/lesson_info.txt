@@ -1,0 +1,114 @@
+=====================================
+============== DOM ==================
+=====================================
+
+DOM - document object model.
+
+URL -> XML(HTML) -> DOM
+
+<html>
+  <head>
+    ...
+  </head>
+  <body>
+    ...
+  </body>
+</html>
+
+DOM = {
+    ...
+    tagName: 'html',
+    children: [{
+        tagName: 'head',
+        children...
+    },{
+        tagName: 'body',
+        children...
+    }]
+    ...
+}
+
+
+-----------------------------------------------
+document
+-----------------------------------------------
+
+How to access DOM from javascript? - easy
+
+> document
+
+"document" is a refference to result of parsed 
+xml (html). It is accesable from anywhere by default.
+
+DOM is a tree structure, so each html element is
+called a DOM Node.
+
+-----------------------------------------------
+Retrieve 
+-----------------------------------------------
+
+<div id="testDiv">
+  <span></span>
+</div>
+
+var div = document.getElementById("testDiv");
+var span = div.getElementByTagName("span");
+
+-----------------------------------------------
+Selectors
+-----------------------------------------------
+
+{Node}.querySelector({CSS selector goes here})
+
+var span = document.querySelector("#testDiv span");
+var spans = document.querySelectorAll("#testDiv span"); 
+
+-----------------------------------------------
+Modify
+-----------------------------------------------
+
+<div id="test">test</div>
+
+var testDiv = document.querySelector("#test");
+testDiv.setAttribute("class", "testClass");
+or 
+testDiv.className = "testClass";
+
+-----------------------------------------------
+Create
+-----------------------------------------------
+
+<div id="test">test</div>
+
+var testDiv = document.querySelector("#test");
+
+var anotherDiv = document.cerateElement('div');
+anotherDiv.appendChild(document.createTextNode("Hello!"));
+...
+
+testDiv.appendChild(anotherDiv);
+
+<div id="container">
+  <div class="list">
+    <ul>
+      <li>
+        <span class="title">BMW</span>
+        <span class="currency">$</span>
+        <span class="cost">10000</span>
+      </li>
+      <li>
+        <span class="title">Audi</span>
+        <span class="currency">$</span>
+        <span class="cost">11000</span>
+      </li>
+      <li>
+        <span class="title">Mercedes</span>
+        <span class="currency">$</span>
+        <span class="cost">15000</span>
+      </li>
+    </ul>
+  </div>
+  <div class="totals">
+    <span></span>
+  </div>
+</div>
