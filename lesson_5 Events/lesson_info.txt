@@ -1,0 +1,118 @@
+******************************************************
+****************** Lesson 5 Events *******************
+******************************************************
+
+1. DOM 
+-element0 
+    L element1
+    L element2
+         L element5
+         L element6  
+    L element3
+    L element4
+
+2. Events
+
+-element0 
+    L element1
+    L element2
+         L element5
+         L element6  
+    L element3
+    L element4
+
+element1.onclick = function(){...}
+element1.setAttribute('onclick', 'alert(11);')
+element2.addEventlistener('click', function(){...})
+
+3. Events order
+
+               | |
+---------------| |-----------------
+| element1     | |                |
+|   -----------| |-----------     |
+|   |element2  \ /          |     |
+|   -------------------------     |
+|        Event CAPTURING          |
+-----------------------------------
+
+               / \
+---------------| |-----------------
+| element1     | |                |
+|   -----------| |-----------     |
+|   |element2  | |          |     |
+|   -------------------------     |
+|        Event BUBBLING           |
+-----------------------------------
+
+
+                 | |  / \
+-----------------| |--| |-----------------
+| element1       | |  | |                |
+|   -------------| |--| |-----------     |
+|   |element2    \ /  | |          |     |
+|   --------------------------------     |
+|        W3C event model                 |
+------------------------------------------
+
+element2.addEventlistener('click', function(){...}, true) // handles event on capturing 
+
+4. Why capturing?
+element1.addEventlistener('click', function(e){e.stopImmediatePropagation();}, true)   
+element2.addEventlistener('click', function(){alert(11)})   // alert will never fire, because event is stopped while it was 
+// on captuing stage
+
+5. closures and solutions
+/*for (var j=0; j<schedule[i].lessons.length; j++) {
+
+          var firstCol = document.createElement("div");
+          firstCol.className = "firstCol";
+          var discipline = document.createTextNode(schedule[i].lessons[j].title);
+          firstCol.appendChild(discipline);
+          wrap.appendChild(firstCol);
+
+          var secondCol = document.createElement("div");
+          secondCol.className = "secondCol";
+          var hometask = document.createTextNode(schedule[i].lessons[j].hometask);          
+          secondCol.appendChild(hometask);
+          wrap.appendChild(secondCol);
+
+          function getClickHandler(secondCol){
+            return function(){
+              secondCol.innerHTML = prompt('Enter homework', secondCol.innerHTML);
+            }
+          };
+          firstCol.addEventListener('click', getClickHandler(secondCol));
+
+          var thirdCol = document.createElement("div");
+          thirdCol.className = "thirdCol";
+          var mark = document.createTextNode(schedule[i].lessons[j].mark);          
+          thirdCol.appendChild(mark);
+          wrap.appendChild(thirdCol);
+};  "*/
+
+
+6. eventObject
+
+element.addEventListener('eventname', function(e){
+....
+});
+e - object of event
+e.target // element which fired the event
+e.currentTarget // element on which event is currently captureg or bubbled
+
+e.preventDefalut() // prevents default browser bahaviour
+e.stopImmediatePropagation() // stops event where it is, no other handlers are called
+
+
+LINKS
+http://www.javascriptkit.com/jsref/events.shtml
+
+
+******************
+HOMETASK part 
+On click 
+<div class="secondCol">Math hometask for Tuesday</div>
+it turns into
+<div class="secondCol"><input type="text" value="Math hometask for Tuesday"><a href="#">Save</a></div>
+And when 'Save' is clicked content of textbox is inserted back to <div class="secondCol">{content of textbox}</div>
